@@ -12,6 +12,11 @@ demonstrate microservices deployment with `docker compose` and **kubernetes**
 
 ## deployment with kubernetes
 * create all deployment (`-deploy.yaml` files) with `kubectl create -f *-deploy.yaml`
+* or
+    * `kubectl create deployment hasher --image=dockercoins/hasher:v0.1`
+    * `kubectl create deployment rng --image=dockercoins/rng:v0.1`
+    * `kubectl create deployment webui --image=dockercoins/webui:v0.1`
+    * `kubectl create deployment worker --image=dockercoins/worker:v0.1`
 
 * we can see logs with `kubectl logs deploy/worker`, and this deploy is failing because he can't reach anything without service
 

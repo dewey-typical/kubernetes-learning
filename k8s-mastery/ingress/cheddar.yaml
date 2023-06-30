@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2023-05-20T18:16:53Z"
+  generation: 1
+  labels:
+    app: cheddar
+  name: cheddar
+  namespace: default
+  resourceVersion: "219669"
+  uid: 4347da19-0ba4-4423-a5d1-3c7955f37a1f
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: cheddar
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cheddar
+    spec:
+      containers:
+      - image: bretfisher/cheese:cheddar
+        imagePullPolicy: IfNotPresent
+        name: cheese
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}

@@ -1,0 +1,6 @@
+[submodule "k8s-mastery/kubercoins"]
+	path = k8s-mastery/kubercoins
+	url = https://github.com/bretfisher/kubercoins
+[submodule "k8s-mastery/consul-cluster/consul-on-kubernetes"]
+	path = k8s-mastery/consul-cluster/consul-on-kubernetes
+	url = https://github.com/kelseyhightower/consul-on-kubernetes.git
